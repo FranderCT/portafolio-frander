@@ -15,7 +15,7 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: "Frander Carrillo | Portafolio",
-  description: "Portafolio de Frander Carrillo — desarrollador y creador digital.",
+  description: "Portafolio de Frander Carrillo — desarrollador web.",
 };
 
 export default function RootLayout({
