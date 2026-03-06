@@ -1,8 +1,15 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/contexts/language-context";
+import { translations } from "@/lib/translations";
 
 export function HeroSection() {
+  const { locale } = useLanguage();
+  const t = translations[locale].hero;
+
   return (
     <section
       className="relative flex min-h-screen flex-col items-center justify-center bg-cover bg-center bg-no-repeat px-6 pt-16"
@@ -20,13 +27,12 @@ export function HeroSection() {
           className="mb-8 size-40 rounded-full object-cover ring-4 ring-white/50 sm:size-52"
           priority
         />
-        <p className="mb-4 font-mono text-sm text-white/90">Hola, soy</p>
+        <p className="mb-4 font-mono text-sm text-white/90">{t.greeting}</p>
         <h1 className="text-center text-5xl font-bold tracking-tight sm:text-6xl md:text-7xl">
           Frander Carrillo
         </h1>
         <p className="mt-6 max-w-xl text-center text-lg text-white/85">
-        Desarrollador de sistemas web.
-        Construyo aplicaciones y plataformas digitales que resuelven problemas reales.
+          {t.tagline}
         </p>
         <div className="mt-10 flex gap-4">
           <Button
@@ -34,15 +40,15 @@ export function HeroSection() {
             size="lg"
             className="bg-white text-black hover:bg-white/90"
           >
-            <Link href="#proyectos">Ver proyectos</Link>
+            <Link href="#proyectos">{t.viewProjects}</Link>
           </Button>
           <Button
             asChild
             variant="outline"
             size="lg"
-            className="border-white/80 text-white hover:bg-white/10 hover:text-white"
+            className="border-white/80 bg-transparent text-white hover:bg-white/10 hover:text-white"
           >
-            <Link href="#contacto">Contactar</Link>
+            <Link href="#contacto">{t.contact}</Link>
           </Button>
         </div>
       </div>
