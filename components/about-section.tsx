@@ -1,4 +1,12 @@
+"use client";
+
+import { useLanguage } from "@/contexts/language-context";
+import { translations } from "@/lib/translations";
+
 export function AboutSection() {
+  const { locale } = useLanguage();
+  const t = translations[locale].about;
+
   return (
     <section
       id="sobre-mi"
@@ -10,13 +18,10 @@ export function AboutSection() {
           id="titulo-sobre-mi"
           className="mb-8 font-mono text-sm font-medium text-muted-foreground"
         >
-          Sobre mí
+          {t.title}
         </h2>
         <p className="max-w-2xl text-lg leading-relaxed text-muted-foreground">
-          Soy Frander Carrillo, apasionado por la tecnología y el desarrollo web.
-          Me gusta aprender, crear proyectos y aportar valor con código. Este
-          portafolio es el espacio donde muestro mi trabajo y mi evolución. Si
-          quieres conocerme mejor o trabajar juntos, escríbeme.
+          {t.body}
         </p>
       </div>
     </section>

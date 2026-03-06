@@ -4,10 +4,15 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import { useLanguage } from "@/contexts/language-context"
+import { translations } from "@/lib/translations"
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 export function ContactForm() {
+  const { locale } = useLanguage()
+  const t = translations[locale].form
+
   const [nombre, setNombre] = useState("")
   const [email, setEmail] = useState("")
   const [mensaje, setMensaje] = useState("")
@@ -16,10 +21,10 @@ export function ContactForm() {
 
   function validate(): boolean {
     const next: typeof errors = {}
-    if (!nombre.trim()) next.nombre = "El nombre es obligatorio"
-    if (!email.trim()) next.email = "El email es obligatorio"
-    else if (!EMAIL_REGEX.test(email)) next.email = "Introduce un email válido"
-    if (!mensaje.trim()) next.mensaje = "El mensaje es obligatorio"
+    if (!nombre.trim()) next.nombre = t.nameRequired
+    if (!email.trim()) next.email = t.emailRequired
+    else if (!EMAIL_REGEX.test(email)) next.email = t.emailInvalid
+    if (!mensaje.trim()) next.mensaje = t.messageRequired
     setErrors(next)
     return Object.keys(next).length === 0
   }
@@ -37,7 +42,7 @@ export function ContactForm() {
   if (submitted) {
     return (
       <p className="rounded-lg border border-border bg-muted/30 p-4 text-center text-sm text-muted-foreground">
-        ¡Mensaje enviado! Te responderé lo antes posible.
+        {t.success}
       </p>
     )
   }
@@ -45,10 +50,10 @@ export function ContactForm() {
   return (
     <form className="grid gap-4" onSubmit={handleSubmit}>
       <div className="grid gap-2">
-        <Label htmlFor="nombre">Nombre</Label>
+        <Label htmlFor="nombre">{t.name}</Label>
         <Input
           id="nombre"
-          placeholder="Tu nombre"
+          placeholder={t.namePlaceholder}
           value={nombre}
           onChange={(e) => setNombre(e.target.value)}
           aria-invalid={!!errors.nombre}
@@ -61,11 +66,11 @@ export function ContactForm() {
         )}
       </div>
       <div className="grid gap-2">
-        <Label htmlFor="email">Email</Label>
+        <Label htmlFor="email">{t.email}</Label>
         <Input
           id="email"
           type="email"
-          placeholder="tu@email.com"
+          placeholder={t.emailPlaceholder}
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           aria-invalid={!!errors.email}
@@ -78,10 +83,10 @@ export function ContactForm() {
         )}
       </div>
       <div className="grid gap-2">
-        <Label htmlFor="mensaje">Mensaje</Label>
+        <Label htmlFor="mensaje">{t.message}</Label>
         <Input
           id="mensaje"
-          placeholder="Escribe tu mensaje..."
+          placeholder={t.messagePlaceholder}
           value={mensaje}
           onChange={(e) => setMensaje(e.target.value)}
           aria-invalid={!!errors.mensaje}
@@ -93,7 +98,7 @@ export function ContactForm() {
           </p>
         )}
       </div>
-      <Button type="submit">Enviar</Button>
+      <Button type="submit">{t.submit}</Button>
     </form>
   )
 }

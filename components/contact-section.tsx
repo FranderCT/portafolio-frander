@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Card,
   CardContent,
@@ -6,6 +8,8 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { ContactForm } from "@/components/contact-form";
+import { useLanguage } from "@/contexts/language-context";
+import { translations } from "@/lib/translations";
 
 const CONTACT_LINKS = [
   { href: "mailto:frander.carrillo@gmail.com", label: "frander.carrillo@gmail.com" },
@@ -13,6 +17,9 @@ const CONTACT_LINKS = [
 ] as const;
 
 export function ContactSection() {
+  const { locale } = useLanguage();
+  const t = translations[locale].contact;
+
   return (
     <section
       id="contacto"
@@ -24,16 +31,16 @@ export function ContactSection() {
           id="titulo-contacto"
           className="mb-8 text-center font-mono text-sm font-medium text-muted-foreground"
         >
-          Contacto
+          {t.title}
         </h2>
         <p className="mb-8 text-center text-muted-foreground">
-          ¿Tienes una idea o quieres colaborar? Me encantaría saber de ti.
+          {t.intro}
         </p>
         <Card>
           <CardHeader>
-            <CardTitle>Envíame un mensaje</CardTitle>
+            <CardTitle>{t.cardTitle}</CardTitle>
             <CardDescription>
-              Completa el formulario y te responderé lo antes posible.
+              {t.cardDescription}
             </CardDescription>
           </CardHeader>
           <CardContent>

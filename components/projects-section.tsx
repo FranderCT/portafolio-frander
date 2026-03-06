@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import {
@@ -7,26 +9,13 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-
-const PROJECTS = [
-  {
-    title: "Proyecto 1",
-    desc: "Descripción breve del proyecto. Tecnologías y objetivo.",
-    href: "#",
-  },
-  {
-    title: "Proyecto 2",
-    desc: "Otro proyecto que demuestra tus habilidades.",
-    href: "#",
-  },
-  {
-    title: "Proyecto 3",
-    desc: "Más ideas y resultados que hayas construido.",
-    href: "#",
-  },
-] as const;
+import { useLanguage } from "@/contexts/language-context";
+import { translations } from "@/lib/translations";
 
 export function ProjectsSection() {
+  const { locale } = useLanguage();
+  const t = translations[locale].projects;
+
   return (
     <section
       id="proyectos"
@@ -38,12 +27,12 @@ export function ProjectsSection() {
           id="titulo-proyectos"
           className="mb-8 font-mono text-sm font-medium text-muted-foreground"
         >
-          Proyectos
+          {t.title}
         </h2>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {PROJECTS.map((project) => (
+          {t.items.map((project, i) => (
             <Card
-              key={project.title}
+              key={project.title + i}
               className="transition-shadow hover:shadow-md"
             >
               <CardHeader>
@@ -52,7 +41,7 @@ export function ProjectsSection() {
               </CardHeader>
               <CardFooter>
                 <Button asChild variant="outline" size="sm">
-                  <Link href={project.href}>Más detalles</Link>
+                  <Link href="#">{t.moreDetails}</Link>
                 </Button>
               </CardFooter>
             </Card>

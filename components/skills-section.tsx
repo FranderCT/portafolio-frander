@@ -1,4 +1,8 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/contexts/language-context";
+import { translations } from "@/lib/translations";
 
 const SKILLS = [
   "HTML & CSS",
@@ -12,6 +16,9 @@ const SKILLS = [
 ] as const;
 
 export function SkillsSection() {
+  const { locale } = useLanguage();
+  const t = translations[locale].skills;
+
   return (
     <section
       id="habilidades"
@@ -23,7 +30,7 @@ export function SkillsSection() {
           id="titulo-habilidades"
           className="mb-8 font-mono text-sm font-medium text-muted-foreground"
         >
-          Habilidades
+          {t.title}
         </h2>
         <div className="flex flex-wrap gap-3">
           {SKILLS.map((skill) => (
