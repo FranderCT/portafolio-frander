@@ -22,7 +22,7 @@ export function AboutSection() {
           {t.title}
         </h2>
         <div className="flex flex-col gap-10 md:flex-row md:items-center md:gap-14">
-          <div className="relative aspect-[4/5] w-full max-w-[280px] shrink-0 overflow-hidden rounded-2xl border border-border/50 bg-muted shadow-sm md:max-w-[260px]">
+          <div className="relative aspect-4/5 w-full max-w-[280px] shrink-0 overflow-hidden rounded-2xl border border-border/50 bg-muted shadow-sm md:max-w-[260px]">
             <Image
               src="/about-foto.jpeg"
               alt="Frander Carrillo"
