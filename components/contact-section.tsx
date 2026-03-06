@@ -8,9 +8,8 @@ import {
 import { ContactForm } from "@/components/contact-form";
 
 const CONTACT_LINKS = [
-  { href: "mailto:tu@email.com", label: "tu@email.com" },
-  { href: "https://github.com", label: "GitHub" },
-  { href: "https://linkedin.com", label: "LinkedIn" },
+  { href: "mailto:frander.carrillo@gmail.com", label: "frander.carrillo@gmail.com" },
+  { href: "https://github.com/FranderCT", label: "GitHub" },
 ] as const;
 
 export function ContactSection() {
