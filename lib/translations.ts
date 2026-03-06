@@ -23,7 +23,10 @@ export const translations = {
     },
     about: {
       title: "Sobre mí",
-      body: "Soy Frander Carrillo, apasionado por la tecnología y el desarrollo web. Me gusta aprender, crear proyectos y aportar valor con código. Este portafolio es el espacio donde muestro mi trabajo y mi evolución. Si quieres conocerme mejor o trabajar juntos, escríbeme.",
+      paragraphs: [
+        "Soy Frander Carrillo y me apasiona la tecnología. Me encanta trabajar con empresas para brindar soluciones innovadoras e implementar sistemas de información adaptados a sus necesidades reales.",
+        "Fuera del código, soy un aficionado al fútbol, sigo al Barcelona y al Saprissa. También fui futbolista de segunda división con Liberia — una etapa que me enseñó disciplina, trabajo en equipo y a perseguir metas. Si quieres conocerme mejor o sumar esfuerzos, escríbeme.",
+      ],
     },
     skills: {
       title: "Habilidades",
@@ -85,7 +88,10 @@ export const translations = {
     },
     about: {
       title: "About me",
-      body: "I'm Frander Carrillo, passionate about technology and web development. I enjoy learning, building projects, and adding value with code. This portfolio is where I showcase my work and growth. If you'd like to get to know me better or work together, get in touch.",
+      paragraphs: [
+        "I'm Frander Carrillo and I'm passionate about technology. I love working with companies to deliver innovative solutions and implement information systems tailored to their real needs.",
+        "Away from code, I'm a football fan, I support Barcelona and Saprissa. I also played in the second division with Liberia — a chapter that taught me discipline, teamwork, and chasing goals. If you'd like to get to know me better or work together, get in touch.",
+      ],
     },
     skills: {
       title: "Skills",
