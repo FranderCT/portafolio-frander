@@ -25,8 +25,8 @@ export function HeroSection() {
           Frander Carrillo
         </h1>
         <p className="mt-6 max-w-xl text-center text-lg text-white/85">
-          Desarrollador y creador digital. Construyo experiencias web y soluciones
-          que importan.
+        Desarrollador de sistemas web.
+        Construyo aplicaciones y plataformas digitales que resuelven problemas reales.
         </p>
         <div className="mt-10 flex gap-4">
           <Button
