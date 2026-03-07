@@ -12,6 +12,8 @@ const SKILLS = [
   "Next.js",
   "Nest.js",
   "Tailwind CSS",
+  "PostgreSQL",
+  "Supabase",
   "Git",
   "Node.js",
 ] as const;
