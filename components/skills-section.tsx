@@ -23,7 +23,7 @@ export function SkillsSection() {
   return (
     <section
       id="habilidades"
-      className="px-6 py-24"
+      className="overflow-hidden px-6 py-24"
       aria-labelledby="titulo-habilidades"
     >
       <div className="mx-auto max-w-4xl">
@@ -33,17 +33,19 @@ export function SkillsSection() {
         >
           {t.title}
         </h2>
-        <div className="flex flex-wrap gap-3">
-          {SKILLS.map((skill) => (
-            <Button
-              key={skill}
-              variant="secondary"
-              size="sm"
-              className="rounded-full"
-            >
-              {skill}
-            </Button>
-          ))}
+        <div className="relative overflow-hidden">
+          <div className="flex w-max animate-skills-marquee gap-3">
+            {[...SKILLS, ...SKILLS].map((skill, i) => (
+              <Button
+                key={`${skill}-${i}`}
+                variant="secondary"
+                size="sm"
+                className="shrink-0 rounded-full"
+              >
+                {skill}
+              </Button>
+            ))}
+          </div>
         </div>
       </div>
     </section>

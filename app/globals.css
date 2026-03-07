@@ -153,3 +153,12 @@ body {
 .animate-fade-in-up-delay-3 { animation-delay: 0.3s; }
 .animate-fade-in-up-delay-4 { animation-delay: 0.4s; }
 .animate-fade-in-up-delay-5 { animation-delay: 0.5s; }
+
+@keyframes skills-marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-skills-marquee {
+  animation: skills-marquee 25s linear infinite;
+}
