@@ -4,6 +4,7 @@ export const translations = {
   es: {
     nav: {
       about: "Sobre mí",
+      education: "Educación",
       skills: "Habilidades",
       projects: "Proyectos",
       contact: "Contacto",
@@ -21,11 +22,18 @@ export const translations = {
       viewProjects: "Ver proyectos",
       contact: "Contactar",
     },
+    education: {
+      title: "Educación",
+      degree: "Ingeniería en Sistemas",
+      degreeDetail: "Estudiante de 4.º año — Universidad Nacional de Costa Rica (UNA), en curso.",
+      diploma: "Diplomado en Programación de Aplicaciones Web",
+      diplomaDetail: "Formación en desarrollo web y aplicaciones.",
+    },
     about: {
       title: "Sobre mí",
       paragraphs: [
         "Soy Frander Carrillo y me apasiona la tecnología. Me encanta trabajar con empresas para brindar soluciones innovadoras e implementar sistemas de información adaptados a sus necesidades reales.",
-        "Fuera del código, soy un aficionado al fútbol, sigo al Barcelona y al Saprissa. También fui futbolista de segunda división con Liberia — una etapa que me enseñó disciplina, trabajo en equipo y a perseguir metas. Si quieres conocerme mejor o sumar esfuerzos, escríbeme.",
+        "Fuera del código, soy un aficionado al fútbol, sigo al Barcelona y al Saprissa. También fui futbolista de segunda división con Municipal Liberia — una etapa que me enseñó disciplina, trabajo en equipo y a perseguir metas. Si quieres conocerme mejor o sumar esfuerzos, escríbeme.",
       ],
     },
     skills: {
@@ -69,6 +77,7 @@ export const translations = {
   en: {
     nav: {
       about: "About me",
+      education: "Education",
       skills: "Skills",
       projects: "Projects",
       contact: "Contact",
@@ -86,11 +95,18 @@ export const translations = {
       viewProjects: "View projects",
       contact: "Contact",
     },
+    education: {
+      title: "Education",
+      degree: "Systems Engineering",
+      degreeDetail: "4th year student — National University of Costa Rica (UNA), in progress.",
+      diploma: "Diploma in Web Application Programming",
+      diplomaDetail: "Training in web development and applications.",
+    },
     about: {
       title: "About me",
       paragraphs: [
         "I'm Frander Carrillo and I'm passionate about technology. I love working with companies to deliver innovative solutions and implement information systems tailored to their real needs.",
-        "Away from code, I'm a football fan, I support Barcelona and Saprissa. I also played in the second division with Liberia — a chapter that taught me discipline, teamwork, and chasing goals. If you'd like to get to know me better or work together, get in touch.",
+        "Away from code, I'm a football fan, I support Barcelona and Saprissa. I also played in the second division with Municipal Liberia — a chapter that taught me discipline, teamwork, and chasing goals. If you'd like to get to know me better or work together, get in touch.",
       ],
     },
     skills: {

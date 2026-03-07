@@ -22,6 +22,7 @@ const PHONE_RAW = "50686505959"; // sin + para WhatsApp
 
 const NAV_IDS = [
   { href: "#sobre-mi", key: "about" as const },
+  { href: "#educacion", key: "education" as const },
   { href: "#habilidades", key: "skills" as const },
   { href: "#proyectos", key: "projects" as const },
   { href: "#contacto", key: "contact" as const },
