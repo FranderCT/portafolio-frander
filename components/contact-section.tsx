@@ -15,6 +15,7 @@ import { WHATSAPP_URL } from "@/lib/constants";
 
 
 const CONTACT_LINKS = [
+  { href: "https://www.linkedin.com/in/frander-carrillo-7a52b8338/", label: "LinkedIn" },
   { href: "mailto:frandercarrillo2@gmail.com", label: "Email" },
   { href: "https://github.com/FranderCT", label: "GitHub" },
   { href: "https://www.instagram.com/fran_ct05/", label: "Instagram" },
