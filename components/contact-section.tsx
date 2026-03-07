@@ -12,7 +12,7 @@ import { useLanguage } from "@/contexts/language-context";
 import { translations } from "@/lib/translations";
 
 const CONTACT_LINKS = [
-  { href: "mailto:frander.carrillo@gmail.com", label: "frander.carrillo@gmail.com" },
+  { href: "mailto:frandercarrillo2@gmail.com", label: "frandercarrillo2@gmail.com" },
   { href: "https://github.com/FranderCT", label: "GitHub" },
 ] as const;
 
