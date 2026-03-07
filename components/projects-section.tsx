@@ -34,7 +34,7 @@ export function ProjectsSection() {
           {t.items.map((project, i) => (
             <Card
               key={project.title + i}
-              className="overflow-hidden transition-shadow hover:shadow-md"
+              className="flex overflow-hidden transition-shadow hover:shadow-md"
             >
               {"image" in project && project.image && (
                 <div className="flex justify-center pt-4 pb-0">
@@ -49,11 +49,11 @@ export function ProjectsSection() {
                   </div>
                 </div>
               )}
-              <CardHeader className={"image" in project && project.image ? "-mt-4 pt-0" : undefined}>
+              <CardHeader className={"image" in project && project.image ? "-mt-4 flex-1 pt-0" : "flex-1"}>
                 <CardTitle>{project.title}</CardTitle>
                 <CardDescription>{project.desc}</CardDescription>
               </CardHeader>
-              <CardFooter>
+              <CardFooter className="mt-auto">
                 <Button asChild variant="outline" size="sm">
                   {"href" in project && project.href ? (
                     <a

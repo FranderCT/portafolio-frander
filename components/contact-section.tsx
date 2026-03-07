@@ -12,8 +12,10 @@ import { useLanguage } from "@/contexts/language-context";
 import { translations } from "@/lib/translations";
 
 const CONTACT_LINKS = [
-  { href: "mailto:frandercarrillo2@gmail.com", label: "frandercarrillo2@gmail.com" },
+  { href: "mailto:frandercarrillo2@gmail.com", label: "email" },
   { href: "https://github.com/FranderCT", label: "GitHub" },
+  { href: "https://www.instagram.com/fran_ct05/", label: "Instagram" },
+  { href: "https://www.facebook.com/frander.carrillotorres", label: "Facebook" },
 ] as const;
 
 export function ContactSection() {

@@ -50,8 +50,18 @@ export const translations = {
           image: "/samarafisio.png",
           href: "https://www.samarafisiowellness.com/",
         },
-        { title: "Proyecto 2", desc: "Otro proyecto que demuestra tus habilidades." },
-        { title: "Proyecto 3", desc: "Más ideas y resultados que hayas construido." },
+        {
+          title: "Venta de Buses Padilla",
+          desc: "Sistema para la venta de buses importados y control de cartera: gestión de clientes, registro de deudas y seguimiento de pagos. Plataforma a medida para el negocio de comercialización de buses.",
+          image: "/logo-venta-de-buses%20padilla.png",
+          href: "https://ventadebusespadilla.com",
+        },
+        {
+          title: "Transportes Padilla",
+          desc: "Refactorización de la página actual y desarrollo de sistema integral: control de viajes, agenda digital y registro de ingresos por viaje. Solución para operación y administración del transporte.",
+          image: "/Transportes-Padilla.png",
+          href: "https://transportespadilla.com",
+        },
       ],
     },
     contact: {
@@ -129,8 +139,18 @@ export const translations = {
           image: "/samarafisio.png",
           href: "https://www.samarafisiowellness.com/",
         },
-        { title: "Project 2", desc: "Another project that demonstrates your skills." },
-        { title: "Project 3", desc: "More ideas and results you've built." },
+        {
+          title: "Venta de Buses Padilla",
+          desc: "System for selling imported buses and receivables management: client management, debt tracking, and payment follow-up. Custom platform for the bus sales business.",
+          image: "/logo-venta-de-buses%20padilla.png",
+          href: "https://ventadebusespadilla.com",
+        },
+        {
+          title: "Transportes Padilla",
+          desc: "Refactoring of the current site and development of an integrated system: trip management, digital agenda, and income tracking per trip. Solution for transport operations and administration.",
+          image: "/Transportes-Padilla.png",
+          href: "https://transportespadilla.com",
+        },
       ],
     },
     contact: {
