@@ -42,8 +42,14 @@ export const translations = {
     projects: {
       title: "Proyectos",
       moreDetails: "Más detalles",
+      visitWebsite: "Visitar sitio web",
       items: [
-        { title: "Proyecto 1", desc: "Descripción breve del proyecto. Tecnologías y objetivo." },
+        {
+          title: "Sámara Fisiowellness",
+          desc: "Sistema de gestión para clínica de fisioterapia: expedientes digitales de pacientes, registro y seguimiento, y recordatorios de cita por correo electrónico. Desarrollado con enfoque en usabilidad y seguridad de la información.",
+          image: "/samarafisio.png",
+          href: "https://www.samarafisiowellness.com/",
+        },
         { title: "Proyecto 2", desc: "Otro proyecto que demuestra tus habilidades." },
         { title: "Proyecto 3", desc: "Más ideas y resultados que hayas construido." },
       ],
@@ -115,8 +121,14 @@ export const translations = {
     projects: {
       title: "Projects",
       moreDetails: "More details",
+      visitWebsite: "Visit website",
       items: [
-        { title: "Project 1", desc: "Brief project description. Technologies and goals." },
+        {
+          title: "Sámara Fisiowellness",
+          desc: "Management system for a physiotherapy clinic: digital patient records, registration and follow-up, and email appointment reminders. Built with a focus on usability and data security.",
+          image: "/samarafisio.png",
+          href: "https://www.samarafisiowellness.com/",
+        },
         { title: "Project 2", desc: "Another project that demonstrates your skills." },
         { title: "Project 3", desc: "More ideas and results you've built." },
       ],

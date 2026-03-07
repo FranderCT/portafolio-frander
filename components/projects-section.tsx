@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import {
@@ -33,15 +34,38 @@ export function ProjectsSection() {
           {t.items.map((project, i) => (
             <Card
               key={project.title + i}
-              className="transition-shadow hover:shadow-md"
+              className="overflow-hidden transition-shadow hover:shadow-md"
             >
-              <CardHeader>
+              {"image" in project && project.image && (
+                <div className="flex justify-center pt-4 pb-0">
+                  <div className="relative size-36 overflow-hidden rounded-full sm:size-40">
+                    <Image
+                      src={project.image}
+                      alt=""
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 640px) 144px, 160px"
+                    />
+                  </div>
+                </div>
+              )}
+              <CardHeader className={"image" in project && project.image ? "-mt-4 pt-0" : undefined}>
                 <CardTitle>{project.title}</CardTitle>
                 <CardDescription>{project.desc}</CardDescription>
               </CardHeader>
               <CardFooter>
                 <Button asChild variant="outline" size="sm">
-                  <Link href="#">{t.moreDetails}</Link>
+                  {"href" in project && project.href ? (
+                    <a
+                      href={project.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {t.visitWebsite}
+                    </a>
+                  ) : (
+                    <Link href="#">{t.moreDetails}</Link>
+                  )}
                 </Button>
               </CardFooter>
             </Card>
