@@ -69,6 +69,7 @@ export const translations = {
       intro: "¿Tienes una idea o quieres colaborar? Me encantaría saber de ti.",
       cardTitle: "Envíame un mensaje",
       cardDescription: "Completa el formulario y te responderé lo antes posible.",
+      whatsappCta: "Chatear por WhatsApp",
     },
     form: {
       name: "Nombre",
@@ -158,6 +159,7 @@ export const translations = {
       intro: "Have an idea or want to collaborate? I'd love to hear from you.",
       cardTitle: "Send me a message",
       cardDescription: "Fill out the form and I'll get back to you as soon as possible.",
+      whatsappCta: "Chat on WhatsApp",
     },
     form: {
       name: "Name",
