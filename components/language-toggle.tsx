@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/language-context";
 import { translations, type Locale } from "@/lib/translations";
 import { Languages } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 type LanguageToggleProps = {
   variant?: "default" | "compact";
@@ -16,7 +17,11 @@ export function LanguageToggle({ variant = "default", className }: LanguageToggl
 
   if (variant === "compact") {
     return (
-      <div className="flex rounded-md border border-border bg-muted/30 p-0.5" role="group" aria-label={ariaLabel}>
+      <div
+        className={cn("flex rounded-md border border-border bg-muted/30 p-0.5", className)}
+        role="group"
+        aria-label={ariaLabel}
+      >
         {(["es", "en"] as const).map((lang) => (
           <Button
             key={lang}
@@ -34,7 +39,7 @@ export function LanguageToggle({ variant = "default", className }: LanguageToggl
   }
 
   return (
-    <div className="flex items-center gap-1.5" role="group" aria-label={ariaLabel}>
+    <div className={cn("flex items-center gap-1.5", className)} role="group" aria-label={ariaLabel}>
       <Languages className="size-4 text-muted-foreground" aria-hidden />
       <div className="flex rounded-md border border-border bg-muted/30 p-0.5">
         {(["es", "en"] as Locale[]).map((lang) => (

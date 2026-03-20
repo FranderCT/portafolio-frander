@@ -25,8 +25,10 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     const stored = localStorage.getItem(STORAGE_KEY) as Locale | null;
-    if (stored === "es" || stored === "en") setLocaleState(stored);
-    setMounted(true);
+    queueMicrotask(() => {
+      if (stored === "es" || stored === "en") setLocaleState(stored);
+      setMounted(true);
+    });
   }, []);
 
   const setLocale = useCallback((next: Locale) => {
