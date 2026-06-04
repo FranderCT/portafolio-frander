@@ -26,9 +26,9 @@ export function ContactSection() {
 
   const CONTACT_CHANNELS = [
     {
-      href: "mailto:frandercarrillo2@gmail.com",
+      href: "mailto:info@frandercarrillo.com",
       label: "Email",
-      value: "frandercarrillo2@gmail.com",
+      value: "info@frandercarrillo.com",
       icon: Mail,
       color: "hover:border-red-500/50 hover:bg-red-500/5 hover:text-red-400",
     },

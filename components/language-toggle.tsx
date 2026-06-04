@@ -21,10 +21,10 @@ const FLAGS = {
   en: (
     <svg viewBox="0 0 512 512" className="size-4 shrink-0 rounded-full overflow-hidden" aria-hidden="true">
       <rect width="512" height="512" fill="#012169"/>
-      <path d="M0 0l512 512M512 0L0 512" stroke="#fff" stroke-width="60"/>
-      <path d="M0 0l512 512M512 0L0 512" stroke="#C8102E" stroke-width="40"/>
-      <path d="M256 0v512M0 256h512" stroke="#fff" stroke-width="100"/>
-      <path d="M256 0v512M0 256h512" stroke="#C8102E" stroke-width="60"/>
+      <path d="M0 0l512 512M512 0L0 512" stroke="#fff" strokeWidth="60"/>
+      <path d="M0 0l512 512M512 0L0 512" stroke="#C8102E" strokeWidth="40"/>
+      <path d="M256 0v512M0 256h512" stroke="#fff" strokeWidth="100"/>
+      <path d="M256 0v512M0 256h512" stroke="#C8102E" strokeWidth="60"/>
     </svg>
   ),
 };

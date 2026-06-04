@@ -58,7 +58,7 @@ export const translations = {
           image: "/Transportes-Padilla.png",
         },
         {
-          title: "Rogo Tours",
+          title: "Transportes Turísticos y Corporativo Rogotours",
           desc: "Sistema de gestión integral para la empresa turística y de transporte: control de clientes, registro de gastos operativos y administración de la flota de unidades de transporte.",
           image: "/rogotours-logo.png",
         },
@@ -148,7 +148,7 @@ export const translations = {
           image: "/Transportes-Padilla.png",
         },
         {
-          title: "Rogo Tours",
+          title: "Transportes Turísticos y Corporativo Rogotours",
           desc: "Comprehensive management system for the tourism and transport company: client management, tracking of operational expenses, and administration of the fleet of transport units.",
           image: "/rogotours-logo.png",
         },
