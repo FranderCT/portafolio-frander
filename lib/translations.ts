@@ -6,7 +6,7 @@ export const translations = {
       about: "Sobre mí",
       education: "Educación",
       skills: "Habilidades",
-      projects: "Proyectos",
+      projects: "Empresas",
       contact: "Contacto",
     },
     menu: {
@@ -19,7 +19,7 @@ export const translations = {
     hero: {
       greeting: "Hola, soy",
       tagline: "Desarrollador de sistemas web. Construyo aplicaciones y plataformas digitales que resuelven problemas reales.",
-      viewProjects: "Ver proyectos",
+      viewProjects: "Ver empresas",
       contact: "Contactar",
     },
     education: {
@@ -40,27 +40,27 @@ export const translations = {
       title: "Habilidades",
     },
     projects: {
-      title: "Proyectos",
-      moreDetails: "Más detalles",
-      visitWebsite: "Visitar sitio web",
+      title: "Empresas con las que trabajo",
       items: [
         {
           title: "Sámara Fisiowellness",
           desc: "Sistema de gestión para clínica de fisioterapia: expedientes digitales de pacientes, registro y seguimiento, y recordatorios de cita por correo electrónico. Desarrollado con enfoque en usabilidad y seguridad de la información.",
           image: "/samarafisio.png",
-          href: "https://www.samarafisiowellness.com/",
         },
         {
           title: "Venta de Buses Padilla",
           desc: "Sistema para la venta de buses importados y control de cartera: gestión de clientes, registro de deudas y seguimiento de pagos. Plataforma a medida para el negocio de comercialización de buses.",
           image: "/logo-venta-de-buses%20padilla.png",
-          href: "https://ventadebusespadilla.com",
         },
         {
           title: "Transportes Padilla",
           desc: "Refactorización de la página actual y desarrollo de sistema integral: control de viajes, agenda digital y registro de ingresos por viaje. Solución para operación y administración del transporte.",
           image: "/Transportes-Padilla.png",
-          href: "https://transportespadilla.com",
+        },
+        {
+          title: "Rogo Tours",
+          desc: "Sistema de gestión integral para la empresa turística y de transporte: control de clientes, registro de gastos operativos y administración de la flota de unidades de transporte.",
+          image: "/rogotours-logo.png",
         },
       ],
     },
@@ -96,7 +96,7 @@ export const translations = {
       about: "About me",
       education: "Education",
       skills: "Skills",
-      projects: "Projects",
+      projects: "Companies",
       contact: "Contact",
     },
     menu: {
@@ -109,7 +109,7 @@ export const translations = {
     hero: {
       greeting: "Hi, I'm",
       tagline: "Web systems developer. I build applications and digital platforms that solve real problems.",
-      viewProjects: "View projects",
+      viewProjects: "View companies",
       contact: "Contact",
     },
     education: {
@@ -130,27 +130,27 @@ export const translations = {
       title: "Skills",
     },
     projects: {
-      title: "Projects",
-      moreDetails: "More details",
-      visitWebsite: "Visit website",
+      title: "Companies I work with",
       items: [
         {
           title: "Sámara Fisiowellness",
           desc: "Management system for a physiotherapy clinic: digital patient records, registration and follow-up, and email appointment reminders. Built with a focus on usability and data security.",
           image: "/samarafisio.png",
-          href: "https://www.samarafisiowellness.com/",
         },
         {
           title: "Venta de Buses Padilla",
           desc: "System for selling imported buses and receivables management: client management, debt tracking, and payment follow-up. Custom platform for the bus sales business.",
           image: "/logo-venta-de-buses%20padilla.png",
-          href: "https://ventadebusespadilla.com",
         },
         {
           title: "Transportes Padilla",
           desc: "Refactoring of the current site and development of an integrated system: trip management, digital agenda, and income tracking per trip. Solution for transport operations and administration.",
           image: "/Transportes-Padilla.png",
-          href: "https://transportespadilla.com",
+        },
+        {
+          title: "Rogo Tours",
+          desc: "Comprehensive management system for the tourism and transport company: client management, tracking of operational expenses, and administration of the fleet of transport units.",
+          image: "/rogotours-logo.png",
         },
       ],
     },
