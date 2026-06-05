@@ -25,11 +25,26 @@ export const translations = {
       scroll: "Desliza para explorar",
     },
     education: {
-      title: "Educación",
-      degree: "Ingeniería en Sistemas",
-      degreeDetail: "Estudiante de 4.º año — Universidad Nacional de Costa Rica (UNA), en curso.",
-      diploma: "Diplomado en Programación de Aplicaciones Web",
-      diplomaDetail: "Formación en desarrollo web y aplicaciones.",
+      title: "Formación",
+      sectionLabel: "Educación",
+      items: [
+        {
+          degree: "Ingeniería en Sistemas",
+          institution: "Universidad Nacional de Costa Rica",
+          period: "2023 — Presente",
+          status: "En curso",
+          detail: "4.º año · Énfasis en desarrollo de software y sistemas de información.",
+          active: true,
+        },
+        {
+          degree: "Diplomado en Programación de Aplicaciones Web",
+          institution: "Universidad Nacional de Costa Rica",
+          period: "2023 — 2025",
+          status: "Completado",
+          detail: "Fundamentos de desarrollo web, bases de datos y aplicaciones cliente-servidor.",
+          active: false,
+        },
+      ],
     },
     about: {
       title: "Sobre mí",
@@ -124,10 +139,25 @@ export const translations = {
     },
     education: {
       title: "Education",
-      degree: "Systems Engineering",
-      degreeDetail: "4th year student — National University of Costa Rica (UNA), in progress.",
-      diploma: "Diploma in Web Application Programming",
-      diplomaDetail: "Training in web development and applications.",
+      sectionLabel: "Education",
+      items: [
+        {
+          degree: "Systems Engineering",
+          institution: "National University of Costa Rica",
+          period: "2023 — Present",
+          status: "In Progress",
+          detail: "4th year · Focus on software development and information systems.",
+          active: true,
+        },
+        {
+          degree: "Diploma in Web Application Programming",
+          institution: "National University of Costa Rica",
+          period: "2023 — 2025",
+          status: "Completed",
+          detail: "Fundamentals of web development, databases, and client-server applications.",
+          active: false,
+        },
+      ],
     },
     about: {
       title: "About me",
