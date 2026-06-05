@@ -51,20 +51,21 @@ export function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
   const { locale } = useLanguage();
   const t = translations[locale];
-
   return (
     <header className="fixed top-4 left-0 right-0 z-50 px-4 sm:px-6 md:px-8">
-      <nav className="mx-auto max-w-4xl rounded-full border border-border/50 bg-background/60 backdrop-blur-md shadow-lg">
+      <nav className="relative mx-auto max-w-4xl rounded-full border border-border/50 bg-background/60 backdrop-blur-md shadow-lg">
         <div className="flex items-center justify-between px-6 py-3">
           <Link href="#" className="font-semibold tracking-tight text-foreground">
             FC
           </Link>
 
-          {/* Desktop: enlaces + idioma */}
-          <div className="hidden items-center gap-4 md:flex">
-            <div className="flex gap-6 text-sm">
-              <NavLinks />
-            </div>
+          {/* Desktop: enlaces (centrados) */}
+          <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-6 text-sm">
+            <NavLinks />
+          </div>
+
+          {/* Desktop: selector de idioma */}
+          <div className="hidden md:block">
             <LanguageToggle variant="compact" />
           </div>
 

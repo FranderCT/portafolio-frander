@@ -2,9 +2,10 @@
 
 import {
   createContext,
+  use,
   useCallback,
-  useContext,
   useEffect,
+  useMemo,
   useState,
   type ReactNode,
 } from "react";
@@ -38,15 +39,20 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     }
   }, []);
 
+  const value = useMemo(
+    () => ({ locale: mounted ? locale : "es", setLocale }),
+    [locale, mounted, setLocale]
+  );
+
   return (
-    <LanguageContext.Provider value={{ locale: mounted ? locale : "es", setLocale }}>
+    <LanguageContext.Provider value={value}>
       {children}
     </LanguageContext.Provider>
   );
 }
 
 export function useLanguage() {
-  const ctx = useContext(LanguageContext);
+  const ctx = use(LanguageContext);
   if (!ctx) throw new Error("useLanguage must be used within LanguageProvider");
   return ctx;
 }

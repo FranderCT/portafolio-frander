@@ -35,9 +35,8 @@ export function LanguageToggle({ variant = "default", className }: LanguageToggl
 
   if (variant === "compact") {
     return (
-      <div
-        className={cn("flex rounded-md border border-border bg-muted/30 p-0.5", className)}
-        role="group"
+      <fieldset
+        className={cn("m-0 min-w-0 flex rounded-md border border-border bg-muted/30 p-0.5", className)}
         aria-label={ariaLabel}
       >
         {(["es", "en"] as const).map((lang) => (
@@ -53,13 +52,13 @@ export function LanguageToggle({ variant = "default", className }: LanguageToggl
             <span className="text-xs uppercase">{lang}</span>
           </Button>
         ))}
-      </div>
+      </fieldset>
     );
   }
 
   return (
-    <div className={cn("flex items-center gap-1.5", className)} role="group" aria-label={ariaLabel}>
-      <div className="flex rounded-md border border-border bg-muted/30 p-0.5">
+    <div className={cn("flex items-center gap-1.5", className)}>
+      <fieldset className="m-0 min-w-0 flex rounded-md border border-border bg-muted/30 p-0.5" aria-label={ariaLabel}>
         {(["es", "en"] as const).map((lang) => (
           <Button
             key={lang}
@@ -73,7 +72,7 @@ export function LanguageToggle({ variant = "default", className }: LanguageToggl
             <span className="text-xs uppercase">{lang}</span>
           </Button>
         ))}
-      </div>
+      </fieldset>
     </div>
   );
 }

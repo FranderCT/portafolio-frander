@@ -34,7 +34,7 @@ export function EducationSection() {
             aria-hidden
           />
 
-          <ol className="flex flex-col gap-10" role="list">
+          <ol className="flex flex-col gap-10">
             {t.items.map((item) => (
               <li key={item.degree} className="relative flex gap-6 pl-14">
                 {/* Dot del timeline */}

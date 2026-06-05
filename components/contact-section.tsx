@@ -20,47 +20,47 @@ function WhatsAppIcon({ className }: { className?: string }) {
   );
 }
 
+const CONTACT_CHANNELS = [
+  {
+    href: "mailto:info@frandercarrillo.com",
+    label: "Email",
+    value: "info@frandercarrillo.com",
+    icon: Mail,
+    color: "hover:border-red-500/50 hover:bg-red-500/5 hover:text-red-400",
+  },
+  {
+    href: WHATSAPP_URL,
+    label: "WhatsApp",
+    value: "+506 8650 5959",
+    icon: WhatsAppIcon,
+    color: "hover:border-[#25D366]/50 hover:bg-[#25D366]/5 hover:text-[#25D366]",
+  },
+  {
+    href: "https://www.linkedin.com/in/frander-carrillo-7a52b8338/",
+    label: "LinkedIn",
+    value: "Frander Carrillo",
+    icon: Linkedin,
+    color: "hover:border-blue-500/50 hover:bg-blue-500/5 hover:text-blue-400",
+  },
+  {
+    href: "https://www.instagram.com/fran_ct05/",
+    label: "Instagram",
+    value: "@fran_ct05",
+    icon: Instagram,
+    color: "hover:border-pink-500/50 hover:bg-pink-500/5 hover:text-pink-400",
+  },
+  {
+    href: "https://www.facebook.com/frander.carrillotorres/",
+    label: "Facebook",
+    value: "Frander Carrillo",
+    icon: Facebook,
+    color: "hover:border-blue-600/50 hover:bg-blue-600/5 hover:text-blue-500",
+  },
+] as const;
+
 export function ContactSection() {
   const { locale } = useLanguage();
   const t = translations[locale].contact;
-
-  const CONTACT_CHANNELS = [
-    {
-      href: "mailto:info@frandercarrillo.com",
-      label: "Email",
-      value: "info@frandercarrillo.com",
-      icon: Mail,
-      color: "hover:border-red-500/50 hover:bg-red-500/5 hover:text-red-400",
-    },
-    {
-      href: WHATSAPP_URL,
-      label: "WhatsApp",
-      value: "+506 8650 5959",
-      icon: WhatsAppIcon,
-      color: "hover:border-[#25D366]/50 hover:bg-[#25D366]/5 hover:text-[#25D366]",
-    },
-    {
-      href: "https://www.linkedin.com/in/frander-carrillo-7a52b8338/",
-      label: "LinkedIn",
-      value: "Frander Carrillo",
-      icon: Linkedin,
-      color: "hover:border-blue-500/50 hover:bg-blue-500/5 hover:text-blue-400",
-    },
-    {
-      href: "https://www.instagram.com/fran_ct05/",
-      label: "Instagram",
-      value: "@fran_ct05",
-      icon: Instagram,
-      color: "hover:border-pink-500/50 hover:bg-pink-500/5 hover:text-pink-400",
-    },
-    {
-      href: "https://www.facebook.com/frander.carrillotorres/",
-      label: "Facebook",
-      value: "Frander Carrillo",
-      icon: Facebook,
-      color: "hover:border-blue-600/50 hover:bg-blue-600/5 hover:text-blue-500",
-    },
-  ] as const;
 
   return (
     <section

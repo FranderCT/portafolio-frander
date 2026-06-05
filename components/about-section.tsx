@@ -54,8 +54,8 @@ export function AboutSection() {
 
           <div className="min-w-0 md:flex-1">
             <div className="max-w-2xl space-y-5 text-lg leading-relaxed text-muted-foreground">
-              {t.paragraphs.map((paragraph, i) => (
-                <p key={i} className="text-balance">
+              {t.paragraphs.map((paragraph) => (
+                <p key={paragraph} className="text-balance">
                   {paragraph}
                 </p>
               ))}

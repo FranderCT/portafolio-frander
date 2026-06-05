@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { SiteHeader } from "@/components/site-header";
 import { HeroSection } from "@/components/hero-section";
 import { AboutSection } from "@/components/about-section";
@@ -7,6 +8,11 @@ import { ProjectsSection } from "@/components/projects-section";
 import { ContactSection } from "@/components/contact-section";
 import { SiteFooter } from "@/components/site-footer";
 import { Separator } from "@/components/ui/separator";
+
+export const metadata: Metadata = {
+  title: "Frander Carrillo | Portafolio",
+  description: "Portafolio de Frander Carrillo — desarrollador web.",
+};
 
 export default function Home() {
   return (

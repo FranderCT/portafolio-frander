@@ -82,7 +82,7 @@ export function HeroSection() {
       {/* Difuminado superior/inferior para fundir con secciones contiguas */}
       <div className="pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-40 bg-linear-to-t from-background to-transparent" />
 
-      <div className="relative z-10 flex flex-col items-center text-foreground">
+      <div className="relative z-10 flex flex-col items-center pb-20 text-foreground sm:pb-0">
         {/* Insignia de disponibilidad */}
         <div className="animate-fade-in-up mb-8 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 backdrop-blur-sm">
           <span className="relative flex size-2">
@@ -170,7 +170,7 @@ export function HeroSection() {
       <Link
         href="#sobre-mi"
         aria-label={t.scroll}
-        className="animate-fade-in-up animate-fade-in-up-delay-5 absolute bottom-8 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 text-white/40 transition-colors hover:text-white/70 sm:flex"
+        className="animate-fade-in-up animate-fade-in-up-delay-5 absolute bottom-6 left-1/2 flex -translate-x-1/2 flex-col items-center gap-2 text-white/40 transition-colors hover:text-white/70 sm:bottom-8"
       >
         <span className="text-[10px] font-medium tracking-widest uppercase">
           {t.scroll}

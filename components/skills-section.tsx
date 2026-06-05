@@ -102,12 +102,8 @@ function Ring3DRow({
 
         const chip = chips[i];
         if (!chip) continue;
-        chip.style.transform = `translate(calc(-50% + ${x.toFixed(2)}px), -50%) scale(${scale.toFixed(4)})`;
-        chip.style.opacity = opacity.toFixed(4);
-        chip.style.zIndex = String(Math.round(t * 100));
-        // Subtle shadow deepens on front items
         const shadow = `0 ${(4 * t).toFixed(1)}px ${(16 * t).toFixed(1)}px rgba(0,0,0,${(0.18 * t).toFixed(3)})`;
-        chip.style.boxShadow = shadow;
+        chip.style.cssText = `transform: translate(calc(-50% + ${x.toFixed(2)}px), -50%) scale(${scale.toFixed(4)}); opacity: ${opacity.toFixed(4)}; z-index: ${Math.round(t * 100)}; box-shadow: ${shadow};`;
       }
 
       rafRef.current = requestAnimationFrame(tick);
