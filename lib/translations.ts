@@ -18,9 +18,11 @@ export const translations = {
     },
     hero: {
       greeting: "Hola, soy",
+      available: "Disponible para nuevos proyectos",
       tagline: "Desarrollador de sistemas web especializado en asesoría tecnológica y en brindar soluciones digitales a medida para empresas.",
       viewProjects: "Ver empresas",
       contact: "Contactar",
+      scroll: "Desliza para explorar",
     },
     education: {
       title: "Educación",
@@ -108,9 +110,11 @@ export const translations = {
     },
     hero: {
       greeting: "Hi, I'm",
+      available: "Available for new projects",
       tagline: "Web systems developer specializing in technological advisory and custom digital solutions for businesses.",
       viewProjects: "View companies",
       contact: "Contact",
+      scroll: "Scroll to explore",
     },
     education: {
       title: "Education",
