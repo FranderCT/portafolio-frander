@@ -182,7 +182,7 @@ export function SkillsSection() {
           {t.heading}
         </p>
 
-        <Ring3DRow items={ALL_SKILLS} speed={0.002} direction={1} initialAngle={0} />
+        <Ring3DRow items={ALL_SKILLS} speed={0.0013} direction={1} initialAngle={0} />
       </div>
     </section>
   );
