@@ -106,7 +106,7 @@ export function HeroSection() {
           />
           <Image
             src="/IMG_5923.jpg"
-            alt="Frander Carrillo"
+            alt="Frander Carrillo, desarrollador web en Costa Rica"
             width={208}
             height={208}
             className="size-40 rounded-full object-cover ring-2 ring-white/20 sm:size-52"

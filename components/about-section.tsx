@@ -18,16 +18,16 @@ export function AboutSection() {
       aria-labelledby="titulo-sobre-mi"
     >
       <div className="mx-auto max-w-5xl">
-        <h2
-          id="titulo-sobre-mi"
-          className="mb-3 flex items-center gap-3 font-mono text-sm font-medium text-muted-foreground"
-        >
+        <p className="mb-3 flex items-center gap-3 font-mono text-sm font-medium text-muted-foreground">
           <span className="h-px w-8 bg-border" />
           {t.title}
-        </h2>
-        <p className="mb-12 max-w-2xl text-2xl font-semibold tracking-tight text-balance sm:text-3xl">
-          {t.heading}
         </p>
+        <h2
+          id="titulo-sobre-mi"
+          className="mb-12 max-w-2xl text-2xl font-semibold tracking-tight text-balance sm:text-3xl"
+        >
+          {t.heading}
+        </h2>
 
         <div className="flex flex-col gap-10 md:flex-row md:gap-14">
           {/* Foto con halo */}
@@ -43,7 +43,7 @@ export function AboutSection() {
             <div className="relative aspect-4/5 w-full overflow-hidden rounded-2xl border border-border/60 bg-muted shadow-lg">
               <Image
                 src="/about-foto.jpeg"
-                alt="Frander Carrillo"
+                alt="Frander Carrillo, desarrollador web y asesor tecnológico en Costa Rica"
                 fill
                 className="object-cover object-[center_15%] transition-transform duration-500 hover:scale-105"
                 sizes="(max-width: 768px) 100vw, 300px"

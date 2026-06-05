@@ -167,16 +167,16 @@ export function SkillsSection() {
       aria-labelledby="titulo-habilidades"
     >
       <div className="mx-auto max-w-4xl">
-        <h2
-          id="titulo-habilidades"
-          className="mb-3 flex items-center gap-3 font-mono text-sm font-medium text-muted-foreground"
-        >
+        <p className="mb-3 flex items-center gap-3 font-mono text-sm font-medium text-muted-foreground">
           <span className="h-px w-8 bg-border" />
           {t.title}
-        </h2>
-        <p className="mb-12 text-2xl font-semibold tracking-tight sm:text-3xl">
-          {t.heading}
         </p>
+        <h2
+          id="titulo-habilidades"
+          className="mb-12 text-2xl font-semibold tracking-tight sm:text-3xl"
+        >
+          {t.heading}
+        </h2>
 
         <Ring3DRow items={ALL_SKILLS} speed={0.0013} direction={1} initialAngle={0} />
       </div>

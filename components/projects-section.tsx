@@ -17,7 +17,7 @@ export function ProjectsSection() {
       <div className="mx-auto max-w-4xl">
         <h2
           id="titulo-proyectos"
-          className="mb-8 font-mono text-sm font-medium text-muted-foreground"
+          className="mb-8 text-2xl font-semibold tracking-tight sm:text-3xl"
         >
           {t.title}
         </h2>
@@ -33,7 +33,7 @@ export function ProjectsSection() {
                     <div className="relative size-full">
                       <Image
                         src={project.image}
-                        alt=""
+                        alt={`${project.title} logo`}
                         fill
                         className="object-contain"
                         sizes="64px"

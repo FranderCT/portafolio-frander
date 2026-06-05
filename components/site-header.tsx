@@ -55,7 +55,7 @@ export function SiteHeader() {
     <header className="fixed top-4 left-0 right-0 z-50 px-4 sm:px-6 md:px-8">
       <nav className="relative mx-auto max-w-4xl rounded-full border border-border/50 bg-background/60 backdrop-blur-md shadow-lg">
         <div className="flex items-center justify-between px-6 py-3">
-          <Link href="#" className="font-semibold tracking-tight text-foreground">
+          <Link href="/" className="font-semibold tracking-tight text-foreground" aria-label="Frander Carrillo — Inicio">
             FC
           </Link>
 

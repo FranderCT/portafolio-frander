@@ -15,17 +15,17 @@ export function EducationSection() {
       aria-labelledby="titulo-educacion"
     >
       <div className="mx-auto max-w-4xl">
-        <h2
-          id="titulo-educacion"
-          className="mb-3 flex items-center gap-3 font-mono text-sm font-medium text-muted-foreground"
-        >
+        <p className="mb-3 flex items-center gap-3 font-mono text-sm font-medium text-muted-foreground">
           <span className="h-px w-8 bg-border" />
           {t.sectionLabel}
-        </h2>
-
-        <p className="mb-12 text-2xl font-semibold tracking-tight sm:text-3xl">
-          {t.title}
         </p>
+
+        <h2
+          id="titulo-educacion"
+          className="mb-12 text-2xl font-semibold tracking-tight sm:text-3xl"
+        >
+          {t.title}
+        </h2>
 
         <div className="relative">
           {/* Línea vertical del timeline */}

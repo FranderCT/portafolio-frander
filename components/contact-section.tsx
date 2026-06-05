@@ -71,7 +71,7 @@ export function ContactSection() {
       <div className="mx-auto max-w-2xl">
         <h2
           id="titulo-contacto"
-          className="mb-6 text-center font-mono text-sm font-medium text-muted-foreground"
+          className="mb-6 text-center text-2xl font-semibold tracking-tight sm:text-3xl"
         >
           {t.title}
         </h2>
