@@ -19,13 +19,22 @@ import {
 const PHONE = "+50686505959";
 const PHONE_RAW = "50686505959"; // sin + para WhatsApp
 
-const NAV_IDS = [
-  { href: "#sobre-mi", key: "about" as const },
-  { href: "#educacion", key: "education" as const },
-  { href: "#habilidades", key: "skills" as const },
-  { href: "#proyectos", key: "projects" as const },
-  { href: "#contacto", key: "contact" as const },
+const NAV_ITEMS = [
+  { id: "sobre-mi", key: "about" as const, type: "hash" as const },
+  { id: "educacion", key: "education" as const, type: "hash" as const },
+  { id: "habilidades", key: "skills" as const, type: "hash" as const },
+  { id: "proyectos", key: "projects" as const, type: "hash" as const },
+  { id: "blog", key: "blog" as const, type: "blog" as const },
+  { id: "contacto", key: "contact" as const, type: "hash" as const },
 ] as const;
+
+function getNavHref(locale: "es" | "en", item: (typeof NAV_ITEMS)[number]) {
+  if (item.type === "blog") {
+    return locale === "en" ? "/en/blog" : "/blog";
+  }
+  const home = locale === "en" ? "/en" : "/";
+  return `${home}#${item.id}`;
+}
 
 function NavLinks({ onNavigate }: { onNavigate?: () => void }) {
   const { locale } = useLanguage();
@@ -33,14 +42,14 @@ function NavLinks({ onNavigate }: { onNavigate?: () => void }) {
 
   return (
     <>
-      {NAV_IDS.map(({ href, key }) => (
+      {NAV_ITEMS.map((item) => (
         <Link
-          key={href}
-          href={href}
+          key={item.id}
+          href={getNavHref(locale, item)}
           onClick={onNavigate}
           className="text-muted-foreground transition hover:text-foreground"
         >
-          {t[key]}
+          {t[item.key]}
         </Link>
       ))}
     </>
@@ -85,13 +94,13 @@ export function SiteHeader() {
                   </SheetTitle>
                 </SheetHeader>
                 <nav className="flex shrink-0 flex-col gap-1 pt-6 items-start" aria-label="Navegación principal">
-                  {NAV_IDS.map(({ href, key }) => (
-                    <SheetClose asChild key={href}>
+                  {NAV_ITEMS.map((item) => (
+                    <SheetClose asChild key={item.id}>
                       <Link
-                        href={href}
+                        href={getNavHref(locale, item)}
                         className="w-full rounded-lg py-2.5 text-base font-medium text-muted-foreground transition-colors hover:text-foreground active:text-foreground"
                       >
-                        {t.nav[key]}
+                        {t.nav[item.key]}
                       </Link>
                     </SheetClose>
                   ))}

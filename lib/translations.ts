@@ -7,6 +7,7 @@ export const translations = {
       education: "Educación",
       skills: "Habilidades",
       projects: "Empresas",
+      blog: "Blog",
       contact: "Contacto",
     },
     menu: {
@@ -126,6 +127,7 @@ export const translations = {
       education: "Education",
       skills: "Skills",
       projects: "Companies",
+      blog: "Blog",
       contact: "Contact",
     },
     menu: {

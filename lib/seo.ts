@@ -73,6 +73,22 @@ export function getLocaleFromPath(pathname: string): Locale {
   return pathname.startsWith("/en") ? "en" : "es";
 }
 
+function getSiteVerification(): Metadata["verification"] {
+  const verification: NonNullable<Metadata["verification"]> = {};
+
+  if (process.env.GOOGLE_SITE_VERIFICATION) {
+    verification.google = process.env.GOOGLE_SITE_VERIFICATION;
+  }
+  if (process.env.BING_SITE_VERIFICATION) {
+    verification.other = {
+      ...verification.other,
+      "msvalidate.01": process.env.BING_SITE_VERIFICATION,
+    };
+  }
+
+  return Object.keys(verification).length > 0 ? verification : undefined;
+}
+
 export function buildMetadata(locale: Locale, path = "/"): Metadata {
   const copy = siteConfig.copy[locale];
   const canonicalPath = locale === "en" ? "/en" : "/";
@@ -105,9 +121,13 @@ export function buildMetadata(locale: Locale, path = "/"): Metadata {
         "max-video-preview": -1,
       },
     },
+    verification: getSiteVerification(),
     alternates: {
       canonical: canonicalPath,
       languages,
+      types: {
+        "application/rss+xml": [{ url: "/rss.xml", title: `${siteConfig.name} RSS` }],
+      },
     },
     openGraph: {
       type: "website",
