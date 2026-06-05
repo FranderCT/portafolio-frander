@@ -12,13 +12,25 @@ export function HeroSection() {
 
   return (
     <section
-      className="relative flex min-h-screen flex-col items-center justify-center bg-cover bg-center bg-no-repeat px-6 pt-16"
-      style={{ backgroundImage: "url('/fondo.JPG')" }}
+      className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-background px-6 pt-16"
       aria-label="Presentación"
     >
-      {/* Overlay oscuro para legibilidad del texto */}
-      <div className="absolute inset-0 bg-black/55" aria-hidden />
-      <div className="relative z-10 flex flex-col items-center text-white">
+      {/* Fondo de cuadrícula y luces degradadas puras con CSS */}
+      <div 
+        className="absolute inset-0 -z-10" 
+        style={{
+          backgroundImage: `
+            radial-gradient(circle at 50% 30%, rgba(99, 102, 241, 0.15) 0%, transparent 60%),
+            radial-gradient(circle at 10% 20%, rgba(14, 165, 233, 0.08) 0%, transparent 40%),
+            radial-gradient(circle at 90% 80%, rgba(16, 185, 129, 0.05) 0%, transparent 50%),
+            linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px)
+          `,
+          backgroundSize: "100% 100%, 100% 100%, 100% 100%, 48px 48px, 48px 48px",
+          backgroundPosition: "0 0, 0 0, 0 0, center center, center center",
+        }}
+      />
+      <div className="relative z-10 flex flex-col items-center text-foreground">
         <Image
           src="/IMG_5923.jpg"
           alt="Frander Carrillo"
