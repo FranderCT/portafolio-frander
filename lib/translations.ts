@@ -33,9 +33,15 @@ export const translations = {
     },
     about: {
       title: "Sobre mí",
+      heading: "Tecnología que impulsa el crecimiento de tu negocio.",
       paragraphs: [
         "Soy Frander Carrillo y me apasiona impulsar el crecimiento de los negocios a través de la tecnología. Me enfoco en brindar asesoría tecnológica integral y en desarrollar sistemas de información y soluciones digitales a medida adaptadas a las necesidades reales de cada empresa.",
         "Fuera del código, soy un aficionado al fútbol, sigo al Barcelona y al Saprissa. También fui futbolista de segunda división con Municipal Liberia — una etapa que me enseñó disciplina, trabajo en equipo y a perseguir metas. Si quieres conocerme mejor o sumar esfuerzos, escríbeme.",
+      ],
+      facts: [
+        "Asesoría tecnológica integral",
+        "Sistemas y soluciones a medida",
+        "Ex-jugador de 2da división",
       ],
     },
     skills: {
@@ -125,9 +131,15 @@ export const translations = {
     },
     about: {
       title: "About me",
+      heading: "Technology that drives your business growth.",
       paragraphs: [
         "I'm Frander Carrillo and I'm passionate about driving business growth through technology. I focus on providing comprehensive technological advisory and developing custom information systems and digital solutions tailored to the real needs of each company.",
         "Away from code, I'm a football fan, I support Barcelona and Saprissa. I also played in the second division with Municipal Liberia — a chapter that taught me discipline, teamwork, and chasing goals. If you'd like to get to know me better or work together, get in touch.",
+      ],
+      facts: [
+        "Comprehensive tech advisory",
+        "Custom systems & solutions",
+        "Former 2nd-division player",
       ],
     },
     skills: {
