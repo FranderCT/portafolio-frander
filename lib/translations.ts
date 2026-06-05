@@ -18,7 +18,7 @@ export const translations = {
     },
     hero: {
       greeting: "Hola, soy",
-      tagline: "Desarrollador de sistemas web. Construyo aplicaciones y plataformas digitales que resuelven problemas reales.",
+      tagline: "Desarrollador de sistemas web especializado en asesoría tecnológica y en brindar soluciones digitales a medida para empresas.",
       viewProjects: "Ver empresas",
       contact: "Contactar",
     },
@@ -32,7 +32,7 @@ export const translations = {
     about: {
       title: "Sobre mí",
       paragraphs: [
-        "Soy Frander Carrillo y me apasiona la tecnología. Me encanta trabajar con empresas para brindar soluciones innovadoras e implementar sistemas de información adaptados a sus necesidades reales.",
+        "Soy Frander Carrillo y me apasiona impulsar el crecimiento de los negocios a través de la tecnología. Me enfoco en brindar asesoría tecnológica integral y en desarrollar sistemas de información y soluciones digitales a medida adaptadas a las necesidades reales de cada empresa.",
         "Fuera del código, soy un aficionado al fútbol, sigo al Barcelona y al Saprissa. También fui futbolista de segunda división con Municipal Liberia — una etapa que me enseñó disciplina, trabajo en equipo y a perseguir metas. Si quieres conocerme mejor o sumar esfuerzos, escríbeme.",
       ],
     },
@@ -108,7 +108,7 @@ export const translations = {
     },
     hero: {
       greeting: "Hi, I'm",
-      tagline: "Web systems developer. I build applications and digital platforms that solve real problems.",
+      tagline: "Web systems developer specializing in technological advisory and custom digital solutions for businesses.",
       viewProjects: "View companies",
       contact: "Contact",
     },
@@ -122,7 +122,7 @@ export const translations = {
     about: {
       title: "About me",
       paragraphs: [
-        "I'm Frander Carrillo and I'm passionate about technology. I love working with companies to deliver innovative solutions and implement information systems tailored to their real needs.",
+        "I'm Frander Carrillo and I'm passionate about driving business growth through technology. I focus on providing comprehensive technological advisory and developing custom information systems and digital solutions tailored to the real needs of each company.",
         "Away from code, I'm a football fan, I support Barcelona and Saprissa. I also played in the second division with Municipal Liberia — a chapter that taught me discipline, teamwork, and chasing goals. If you'd like to get to know me better or work together, get in touch.",
       ],
     },
