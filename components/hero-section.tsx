@@ -50,7 +50,7 @@ export function HeroSection() {
         }}
       />
       {/* Difuminado superior/inferior para fundir con secciones contiguas */}
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-40 bg-gradient-to-t from-background to-transparent" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-40 bg-linear-to-t from-background to-transparent" />
 
       <div className="relative z-10 flex flex-col items-center text-foreground">
         {/* Insignia de disponibilidad */}
@@ -87,7 +87,7 @@ export function HeroSection() {
         <p className="animate-fade-in-up animate-fade-in-up-delay-2 mb-3 font-mono text-sm text-white/70">
           {t.greeting}
         </p>
-        <h1 className="animate-fade-in-up animate-fade-in-up-delay-2 bg-gradient-to-br from-white via-white to-white/50 bg-clip-text text-center text-5xl font-bold tracking-tight text-transparent sm:text-6xl md:text-7xl">
+        <h1 className="animate-fade-in-up animate-fade-in-up-delay-2 bg-linear-to-br from-white via-white to-white/50 bg-clip-text text-center text-5xl font-bold tracking-tight text-transparent sm:text-6xl md:text-7xl">
           Frander Carrillo
         </h1>
         <p className="animate-fade-in-up animate-fade-in-up-delay-3 mt-6 max-w-xl text-center text-lg text-balance text-white/70">
