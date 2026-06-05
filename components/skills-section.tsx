@@ -1,5 +1,6 @@
 "use client";
 
+import { useRef } from "react";
 import {
   siHtml5,
   siCss,
@@ -29,14 +30,51 @@ function isHexDark(hex: string) {
 }
 
 function SkillChip({ icon, name }: { icon: SimpleIcon; name: string }) {
+  const ref = useRef<HTMLDivElement>(null);
   const dark = isHexDark(icon.hex);
   const brandColor = `#${icon.hex}`;
 
+  function onMouseMove(e: React.MouseEvent<HTMLDivElement>) {
+    const el = ref.current;
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width - 0.5;
+    const y = (e.clientY - rect.top) / rect.height - 0.5;
+    el.style.transform = `perspective(300px) rotateX(${-y * 18}deg) rotateY(${x * 18}deg) scale(1.12) translateZ(8px)`;
+    el.style.boxShadow = `${-x * 12}px ${-y * 12}px 28px rgba(0,0,0,0.18), 0 4px 16px rgba(0,0,0,0.12)`;
+  }
+
+  function onMouseLeave() {
+    const el = ref.current;
+    if (!el) return;
+    el.style.transform = "";
+    el.style.boxShadow = "";
+  }
+
   return (
-    <div className="inline-flex shrink-0 items-center gap-2.5 rounded-full border border-border/60 bg-card/60 px-4 py-2.5 text-sm font-medium text-foreground/80 shadow-sm backdrop-blur-sm transition-all duration-200 hover:border-border hover:bg-card hover:text-foreground hover:shadow-md">
+    <div
+      ref={ref}
+      onMouseMove={onMouseMove}
+      onMouseLeave={onMouseLeave}
+      className="relative inline-flex shrink-0 cursor-default items-center gap-2.5 overflow-hidden rounded-full border border-border/60 bg-card/80 px-4 py-2.5 text-sm font-medium text-foreground/80 backdrop-blur-sm select-none"
+      style={{ transition: "transform 0.15s ease-out, box-shadow 0.15s ease-out", transformStyle: "preserve-3d", willChange: "transform" }}
+    >
+      {/* Glass shine */}
+      <div
+        className="pointer-events-none absolute inset-x-0 top-0 h-1/2 rounded-t-full opacity-60"
+        style={{ background: "linear-gradient(to bottom, rgba(255,255,255,0.22), transparent)" }}
+        aria-hidden
+      />
+      {/* Bottom edge shadow for depth */}
+      <div
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-px opacity-40"
+        style={{ background: "linear-gradient(to right, transparent, rgba(255,255,255,0.3), transparent)" }}
+        aria-hidden
+      />
+
       <span
-        className={`flex size-5 shrink-0 items-center justify-center rounded-full ${dark ? "p-[3px]" : ""}`}
-        style={dark ? { background: brandColor } : undefined}
+        className="flex size-5 shrink-0 items-center justify-center rounded-full"
+        style={dark ? { background: brandColor, padding: "3px" } : undefined}
       >
         <svg
           role="img"
@@ -48,7 +86,8 @@ function SkillChip({ icon, name }: { icon: SimpleIcon; name: string }) {
           <path d={icon.path} />
         </svg>
       </span>
-      {name}
+
+      <span className="relative">{name}</span>
     </div>
   );
 }
@@ -82,9 +121,17 @@ function MarqueeRow({
 }) {
   const doubled = [...items, ...items];
   return (
-    <div className="relative overflow-hidden">
+    <div
+      className="group/row relative overflow-hidden"
+    >
+      {/* Fade masks */}
+      <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-background to-transparent" aria-hidden />
+      <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-background to-transparent" aria-hidden />
+
       <div
-        className={`flex w-max gap-3 ${reverse ? "animate-skills-marquee-reverse" : "animate-skills-marquee"}`}
+        className={`flex w-max gap-3 py-2 ${
+          reverse ? "animate-skills-marquee-reverse" : "animate-skills-marquee"
+        } group-hover/row:[animation-play-state:paused]`}
       >
         {doubled.map((item, i) => (
           <SkillChip key={`${item.name}-${i}`} icon={item.icon} name={item.name} />
