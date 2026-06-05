@@ -163,8 +163,17 @@ body {
   100% { transform: translateX(-50%); }
 }
 
+@keyframes skills-marquee-reverse {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
 .animate-skills-marquee {
   animation: skills-marquee 25s linear infinite;
+}
+
+.animate-skills-marquee-reverse {
+  animation: skills-marquee-reverse 25s linear infinite;
 }
 
 @keyframes scroll-hint {
@@ -181,7 +190,8 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .animate-fade-in-up,
   .animate-scroll-hint,
-  .animate-skills-marquee {
+  .animate-skills-marquee,
+  .animate-skills-marquee-reverse {
     animation: none;
     opacity: 1;
   }

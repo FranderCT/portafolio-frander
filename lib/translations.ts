@@ -61,6 +61,12 @@ export const translations = {
     },
     skills: {
       title: "Habilidades",
+      heading: "Tecnologías que uso a diario.",
+      categories: {
+        frontend: "Frontend",
+        backend: "Backend",
+        tools: "Herramientas",
+      },
     },
     projects: {
       title: "Empresas con las que trabajo",
@@ -174,6 +180,12 @@ export const translations = {
     },
     skills: {
       title: "Skills",
+      heading: "Technologies I use every day.",
+      categories: {
+        frontend: "Frontend",
+        backend: "Backend",
+        tools: "Tools",
+      },
     },
     projects: {
       title: "Companies I work with",
