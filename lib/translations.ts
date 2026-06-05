@@ -19,7 +19,7 @@ export const translations = {
     hero: {
       greeting: "Hola, soy",
       available: "Disponible para nuevos proyectos",
-      tagline: "Desarrollador de sistemas web especializado en asesoría tecnológica y en brindar soluciones digitales a medida para empresas.",
+      tagline: "Tu socio tecnológico. Diseño y desarrollo soluciones web a medida que resuelven problemas reales de negocio.",
       viewProjects: "Ver empresas",
       contact: "Contactar",
       scroll: "Desliza para explorar",
@@ -111,7 +111,7 @@ export const translations = {
     hero: {
       greeting: "Hi, I'm",
       available: "Available for new projects",
-      tagline: "Web systems developer specializing in technological advisory and custom digital solutions for businesses.",
+      tagline: "Your technology partner. I design and build custom web solutions that solve real business problems.",
       viewProjects: "View companies",
       contact: "Contact",
       scroll: "Scroll to explore",
