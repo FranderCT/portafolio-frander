@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import {
   siHtml5,
   siCss,
@@ -30,48 +30,16 @@ function isHexDark(hex: string) {
 }
 
 function SkillChip({ icon, name }: { icon: SimpleIcon; name: string }) {
-  const ref = useRef<HTMLDivElement>(null);
   const dark = isHexDark(icon.hex);
   const brandColor = `#${icon.hex}`;
-
-  function onMouseMove(e: React.MouseEvent<HTMLDivElement>) {
-    const el = ref.current;
-    if (!el) return;
-    const rect = el.getBoundingClientRect();
-    const x = (e.clientX - rect.left) / rect.width - 0.5;
-    const y = (e.clientY - rect.top) / rect.height - 0.5;
-    el.style.transform = `perspective(300px) rotateX(${-y * 18}deg) rotateY(${x * 18}deg) scale(1.12) translateZ(8px)`;
-    el.style.boxShadow = `${-x * 12}px ${-y * 12}px 28px rgba(0,0,0,0.18), 0 4px 16px rgba(0,0,0,0.12)`;
-  }
-
-  function onMouseLeave() {
-    const el = ref.current;
-    if (!el) return;
-    el.style.transform = "";
-    el.style.boxShadow = "";
-  }
-
   return (
-    <div
-      ref={ref}
-      onMouseMove={onMouseMove}
-      onMouseLeave={onMouseLeave}
-      className="relative inline-flex shrink-0 cursor-default items-center gap-2.5 overflow-hidden rounded-full border border-border/60 bg-card/80 px-4 py-2.5 text-sm font-medium text-foreground/80 backdrop-blur-sm select-none"
-      style={{ transition: "transform 0.15s ease-out, box-shadow 0.15s ease-out", transformStyle: "preserve-3d", willChange: "transform" }}
-    >
-      {/* Glass shine */}
+    <div className="relative inline-flex shrink-0 select-none items-center gap-2.5 overflow-hidden rounded-full border border-border/60 bg-card/90 px-4 py-2.5 text-sm font-medium text-foreground/80 shadow-md backdrop-blur-sm">
+      {/* Glass shine top */}
       <div
-        className="pointer-events-none absolute inset-x-0 top-0 h-1/2 rounded-t-full opacity-60"
+        className="pointer-events-none absolute inset-x-0 top-0 h-1/2 rounded-t-full"
         style={{ background: "linear-gradient(to bottom, rgba(255,255,255,0.22), transparent)" }}
         aria-hidden
       />
-      {/* Bottom edge shadow for depth */}
-      <div
-        className="pointer-events-none absolute inset-x-0 bottom-0 h-px opacity-40"
-        style={{ background: "linear-gradient(to right, transparent, rgba(255,255,255,0.3), transparent)" }}
-        aria-hidden
-      />
-
       <span
         className="flex size-5 shrink-0 items-center justify-center rounded-full"
         style={dark ? { background: brandColor, padding: "3px" } : undefined}
@@ -86,13 +54,96 @@ function SkillChip({ icon, name }: { icon: SimpleIcon; name: string }) {
           <path d={icon.path} />
         </svg>
       </span>
-
       <span className="relative">{name}</span>
     </div>
   );
 }
 
-const ROW_1 = [
+const RADIUS = 320;
+
+function Ring3DRow({
+  items,
+  speed,
+  direction = 1,
+  initialAngle = 0,
+}: {
+  items: readonly { icon: SimpleIcon; name: string }[];
+  speed: number;
+  direction?: 1 | -1;
+  initialAngle?: number;
+}) {
+  const sceneRef = useRef<HTMLDivElement>(null);
+  const angleRef = useRef(initialAngle);
+  const rafRef = useRef<number>(0);
+  const pausedRef = useRef(false);
+  const N = items.length;
+
+  useEffect(() => {
+    const scene = sceneRef.current;
+    if (!scene) return;
+    const chips = Array.from(scene.querySelectorAll<HTMLElement>("[data-ring-chip]"));
+    const angleStep = (2 * Math.PI) / N;
+
+    function tick() {
+      if (!pausedRef.current) angleRef.current += direction * speed;
+
+      for (let i = 0; i < N; i++) {
+        const θ = angleRef.current + i * angleStep;
+        const sinθ = Math.sin(θ);
+        const cosθ = Math.cos(θ);
+
+        const x = RADIUS * sinθ;
+        // cosθ in [-1,1]: 1 = front, -1 = back
+        // scale: front=1.0, back=0.52
+        const t = (cosθ + 1) / 2; // 0..1
+        const scale = 0.52 + 0.48 * t;
+        // opacity: fully visible front half, fade to 0 at back
+        const opacity = cosθ >= 0 ? 1 : Math.max(0, 1 + cosθ);
+
+        const chip = chips[i];
+        if (!chip) continue;
+        chip.style.transform = `translate(calc(-50% + ${x.toFixed(2)}px), -50%) scale(${scale.toFixed(4)})`;
+        chip.style.opacity = opacity.toFixed(4);
+        chip.style.zIndex = String(Math.round(t * 100));
+        // Subtle shadow deepens on front items
+        const shadow = `0 ${(4 * t).toFixed(1)}px ${(16 * t).toFixed(1)}px rgba(0,0,0,${(0.18 * t).toFixed(3)})`;
+        chip.style.boxShadow = shadow;
+      }
+
+      rafRef.current = requestAnimationFrame(tick);
+    }
+
+    rafRef.current = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(rafRef.current);
+  }, [N, speed, direction]);
+
+  return (
+    <div
+      className="relative h-14"
+      onMouseEnter={() => { pausedRef.current = true; }}
+      onMouseLeave={() => { pausedRef.current = false; }}
+    >
+      {/* Fade edge masks */}
+      <div className="pointer-events-none absolute inset-y-0 left-0 z-20 w-28 bg-gradient-to-r from-background to-transparent" aria-hidden />
+      <div className="pointer-events-none absolute inset-y-0 right-0 z-20 w-28 bg-gradient-to-l from-background to-transparent" aria-hidden />
+
+      <div ref={sceneRef} className="relative h-full w-full">
+        {items.map((item) => (
+          <div
+            key={item.name}
+            data-ring-chip
+            className="absolute left-1/2 top-1/2 will-change-transform"
+            style={{ transformOrigin: "center center" }}
+          >
+            <SkillChip icon={item.icon} name={item.name} />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+const ALL_SKILLS = [
   { icon: siHtml5, name: "HTML5" },
   { icon: siCss, name: "CSS" },
   { icon: siJavascript, name: "JavaScript" },
@@ -100,9 +151,6 @@ const ROW_1 = [
   { icon: siReact, name: "React" },
   { icon: siNextdotjs, name: "Next.js" },
   { icon: siTailwindcss, name: "Tailwind CSS" },
-] as const;
-
-const ROW_2 = [
   { icon: siNodedotjs, name: "Node.js" },
   { icon: siNestjs, name: "Nest.js" },
   { icon: siPostgresql, name: "PostgreSQL" },
@@ -111,35 +159,6 @@ const ROW_2 = [
   { icon: siGithub, name: "GitHub" },
   { icon: siFigma, name: "Figma" },
 ] as const;
-
-function MarqueeRow({
-  items,
-  reverse = false,
-}: {
-  items: readonly { icon: SimpleIcon; name: string }[];
-  reverse?: boolean;
-}) {
-  const doubled = [...items, ...items];
-  return (
-    <div
-      className="group/row relative overflow-hidden"
-    >
-      {/* Fade masks */}
-      <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-background to-transparent" aria-hidden />
-      <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-background to-transparent" aria-hidden />
-
-      <div
-        className={`flex w-max gap-3 py-2 ${
-          reverse ? "animate-skills-marquee-reverse" : "animate-skills-marquee"
-        } group-hover/row:[animation-play-state:paused]`}
-      >
-        {doubled.map((item, i) => (
-          <SkillChip key={`${item.name}-${i}`} icon={item.icon} name={item.name} />
-        ))}
-      </div>
-    </div>
-  );
-}
 
 export function SkillsSection() {
   const { locale } = useLanguage();
@@ -163,10 +182,7 @@ export function SkillsSection() {
           {t.heading}
         </p>
 
-        <div className="flex flex-col gap-4">
-          <MarqueeRow items={ROW_1} />
-          <MarqueeRow items={ROW_2} reverse />
-        </div>
+        <Ring3DRow items={ALL_SKILLS} speed={0.002} direction={1} initialAngle={0} />
       </div>
     </section>
   );
